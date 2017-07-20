@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { View, Text} from 'react-native';
 
 
-class AuthScreen extends Component {
+class SettingsScreen extends Component {
   render() {
     return (
       <View>
@@ -17,4 +17,4 @@ class AuthScreen extends Component {
   }
 }
 
-export default AuthScreen;
+export default SettingsScreen;

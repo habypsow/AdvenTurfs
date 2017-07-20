@@ -2,7 +2,14 @@ import React, { Component } from 'react';
 import { View, Text} from 'react-native';
 
 
-class AuthScreen extends Component {
+class ReviewScreen extends Component {
+  static navigationOptions = () => ({
+    title: "Reviews",
+    headerRight: <Text>Right</Text>
+  });
+
+
+
   render() {
     return (
       <View>
@@ -17,4 +24,4 @@ class AuthScreen extends Component {
   }
 }
 
-export default AuthScreen;
+export default ReviewScreen;
