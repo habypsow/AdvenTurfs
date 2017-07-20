@@ -1,11 +1,16 @@
 import React, { Component } from 'react';
-import { View, Text} from 'react-native';
+import { View, Text } from 'react-native';
+import { Button } from 'react-native-elements';
 
 
 class ReviewScreen extends Component {
-  static navigationOptions = () => ({
+  static navigationOptions = ({ navigation }) => ({
     title: "Reviews",
-    headerRight: <Text>Right</Text>
+    headerRight:
+    <Button title="Settings"
+    onPress={() => navigation.navigate('settings')}
+    backgroundColor="rgba(0,0,0,0)"
+    color="rgba(0,122,255,1)"/>
   });
 
 
