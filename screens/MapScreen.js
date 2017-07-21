@@ -28,7 +28,9 @@ onRegionChangeComplete = (region) => {
 }
 
 onButtonPress = () => {
-  this.props.fetchParks();
+  this.props.fetchParks(this.state.region, () => {
+      this.props.navigation.navigate('deck');
+  });
 };
 
   render() {

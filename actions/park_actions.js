@@ -21,7 +21,7 @@ import {
 //
 // }
 
-export const fetchParks = () => {
+export const fetchParks = (region, callback) => {
 
 return ( dispatch ) => { axios.get(`https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=47.6097,-122.3331&radius=1000&type=park&key=AIzaSyDl3wgOiDflGbUlR6aTuWkb0-VdaJC3PLY`)
 .then((response) => {
@@ -29,6 +29,7 @@ return ( dispatch ) => { axios.get(`https://maps.googleapis.com/maps/api/place/n
       type: FETCH_PARKS,
       payload: response.data
     });
+    callback();
       console.log(response.data);
       console.log(response.status);
     });
