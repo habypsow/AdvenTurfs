@@ -28,7 +28,7 @@ onRegionChangeComplete = (region) => {
 }
 
 onButtonPress = () => {
-  this.props.fetchParks(this.state.region);
+  this.props.fetchParks();
 };
 
   render() {
