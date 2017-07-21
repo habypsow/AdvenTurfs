@@ -16,12 +16,14 @@ const PARK_QUERY_PARAMS = {
 
 const buildUrl = () => {
   const query = qs.stringify({ ...PARK_QUERY_PARAMS });
+  console.log(query);
   return `${ROOT_URL}${query}`;
 
 }
 
-export const fetchParks = (region) => async (dispatch) => {
+export const fetchParks = () => async (dispatch) => {
 let { data } = await axios.get(buildUrl);
 dispatch({ type: FETCH_PARKS, payload: data });
 console.log(data);
+
   };
