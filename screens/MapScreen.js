@@ -18,6 +18,10 @@ componentDidMount() {
   this.setState({ mapLoaded: true });
 }
 
+onRegionChangeComplete = (region) => {
+  // console.log(region);
+  this.setState({ region });
+}
   render() {
     if (!this.state.mapLoaded) {
       return (
@@ -30,7 +34,8 @@ componentDidMount() {
       <View style={{ flex: 1 }}>
       <MapView
       region={this.state.region}
-      style={{ flex: 1 }} />
+      style={{ flex: 1 }}
+      onRegionChangeComplete={this.onRegionChangeComplete} />
       </View>
     );
   }
