@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { MapView } from 'expo';
 import { Card, Button } from 'react-native-elements';
 import Swipe from '../components/Swipe';
+import * as actions from '../actions';
 
 
 
@@ -50,6 +51,7 @@ class DeckScreen extends Component {
       data={this.props.parks}
       renderCard={this.renderCard}
       renderNoMoreCards={this.renderNoMoreCards}
+      onSwipeRight={park => this.props.likePark(park)}
 
       />
       </View>
@@ -69,4 +71,4 @@ function mapStateToProps({ parks }) {
   return { parks: parks.results }
 }
 
-export default connect(mapStateToProps)(DeckScreen);
+export default connect(mapStateToProps, actions)(DeckScreen);

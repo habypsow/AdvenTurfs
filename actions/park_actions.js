@@ -2,7 +2,8 @@ import axios from 'axios';
 import qs from 'qs';
 
 import {
-  FETCH_PARKS
+  FETCH_PARKS,
+  LIKE_PARK
 } from './types';
 
 // const ROOT_URL = 'https://maps.googleapis.com/maps/api/place/nearbysearch/json?';
@@ -35,3 +36,10 @@ return ( dispatch ) => { axios.get(`https://maps.googleapis.com/maps/api/place/n
     });
   };
 };
+
+export const likePark = (park) => {
+  return {
+    payload: park,
+    type: LIKE_PARK
+  }
+}
