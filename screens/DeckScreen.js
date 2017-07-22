@@ -15,11 +15,15 @@ class DeckScreen extends Component {
           <Text>{park.vicinity}</Text>
           <Text>{park.rating}</Text>
         </View>
-        <Text>
-          {park.photos.html_attributions}
-        </Text>
+    
       </Card>
     )
+  }
+  renderNoMoreCards() {
+    return (
+      <Card title="No more parks">
+      </Card>
+    );
   }
 
   render() {
@@ -28,6 +32,7 @@ class DeckScreen extends Component {
       <Swipe
       data={this.props.parks}
       renderCard={this.renderCard}
+      renderNoMoreCards={this.renderNoMoreCards}
       />
       </View>
     );
