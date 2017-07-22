@@ -1,15 +1,44 @@
 import React, { Component } from 'react';
 import { View, Text} from 'react-native';
 import { connect } from 'react-redux';
+import { MapView } from 'expo';
+import { Card, Button } from 'react-native-elements';
+import Swipe from '../components/Swipe';
+
 
 
 class DeckScreen extends Component {
+  renderCard(park) {
+    return (
+      <Card title={park.name}>
+        <View style={styles.detailWrapper}>
+          <Text>{park.vicinity}</Text>
+          <Text>{park.rating}</Text>
+        </View>
+        <Text>
+          {park.photos.html_attributions}
+        </Text>
+      </Card>
+    )
+  }
+
   render() {
     return (
       <View>
-  
+      <Swipe
+      data={this.props.parks}
+      renderCard={this.renderCard}
+      />
       </View>
     );
+  }
+}
+
+const styles = {
+  detailWrapper: {
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    marginBottom: 10
   }
 }
 

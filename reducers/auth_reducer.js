@@ -6,7 +6,7 @@ export default function(state = {}, action) {
     case FACEBOOK_LOGIN_SUCCESS:
     return { token: action.payload };
     case FACEBOOK_LOGIN_FAIL:
-    return { token: null};
+    return { token: null };
     default: return state;
   }
 }
