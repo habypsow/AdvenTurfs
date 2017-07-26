@@ -11,8 +11,11 @@ class Slides extends Component {
     if (index === this.props.data.length - 1) {
       return (
         <Button
-        title="Start"
+        title="START"
         raised
+        large
+        iconRight
+        icon={{ name: 'touch-app'}}
         buttonStyle={styles.buttonStyle}
         onPress={this.props.onComplete}
         />
@@ -63,9 +66,9 @@ const styles = {
     lineHeight: 40
   },
   buttonStyle: {
-    backgroundColor: '#0288D1',
-    marginTop: 25,
-    borderRadius: 25
+    marginTop: 35,
+    backgroundColor: '#cc0099',
+
 
   }
 }
