@@ -10,10 +10,10 @@ import * as actions from '../actions';
 class MapScreen extends Component {
   static navigationOptions = {
     title: 'Map',
-    // tabBarIcon =
-    //   ({ tintColor }) => ({
-    //     return <Icon name="description" size={30} color={tintColor} />
-    //   })
+    tabBarIcon:
+      ({ tintColor }) => {
+        return <Icon name="my-location" size={30} color={tintColor} />
+      }
   }
 
   state= {
