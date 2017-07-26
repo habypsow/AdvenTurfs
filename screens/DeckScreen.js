@@ -42,7 +42,14 @@ class DeckScreen extends Component {
   }
   renderNoMoreCards() {
     return (
-      <Card title="No more parks">
+      <Card title="No More Parks">
+        <Button
+        title="Back to Map"
+        large
+        icon={{ name: 'my-location' }}
+        backgroundColor='#03A9F4'
+        onPress={() => this.props.navigation.navigate('map')}
+        />
       </Card>
     );
   }
@@ -53,7 +60,7 @@ class DeckScreen extends Component {
       <Swipe
       data={this.props.parks}
       renderCard={this.renderCard}
-      renderNoMoreCards={this.renderNoMoreCards}
+      renderNoMoreCards={this.renderNoMoreCards.bind(this)}
       onSwipeRight={park => this.props.likePark(park)}
       keyProp="id"
       />

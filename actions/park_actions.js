@@ -3,7 +3,8 @@ import qs from 'qs';
 
 import {
   FETCH_PARKS,
-  LIKE_PARK
+  LIKE_PARK,
+  CLEAR_LIKED_PARKS
 } from './types';
 
 // const ROOT_URL = 'https://maps.googleapis.com/maps/api/place/nearbysearch/json?';
@@ -43,3 +44,7 @@ export const likePark = (park) => {
     type: LIKE_PARK
   }
 }
+
+export const clearLikedParks = () => {
+  return { type: CLEAR_LIKED_PARKS }
+};
