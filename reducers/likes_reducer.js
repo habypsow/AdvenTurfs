@@ -8,7 +8,7 @@ export default function(state = [], action) {
     case LIKE_PARK:
       return _.uniqBy([
         action.payload, ...state
-      ], park.id);
+      ], 'id');
     default:
     return state;
   }

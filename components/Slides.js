@@ -61,7 +61,9 @@ const styles = {
   },
   buttonStyle: {
     backgroundColor: '#0288D1',
-    marginTop: 15
+    marginTop: 25,
+    borderRadius: 25
+    
   }
 }
 
