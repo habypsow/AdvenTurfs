@@ -56,14 +56,17 @@ const styles = {
     width: SCREEN_WIDTH
   },
   textStyle: {
-    fontSize: 30,
-    color: 'white'
+    fontSize: 25,
+    color: 'white',
+    fontFamily: 'Cochin',
+    textAlign: 'center',
+    lineHeight: 40
   },
   buttonStyle: {
     backgroundColor: '#0288D1',
     marginTop: 25,
     borderRadius: 25
-    
+
   }
 }
 

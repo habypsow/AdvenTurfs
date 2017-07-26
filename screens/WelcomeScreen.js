@@ -5,8 +5,8 @@ import Slides from '../components/Slides';
 import { AppLoading } from 'expo';
 
 const SLIDE_DATA = [
-  { text: 'Welcome', color: '#03A9F4' },
-  { text: 'Set your location, then swipe away', color: '#009688' }
+  { text: 'W E L C O M E', color: '#cc0099' },
+  { text: "Let's Begin!  Please Log In With Facebook, Then Set Your Location.." , color: '#009688' }
 ];
 
 class WelcomeScreen extends Component {
