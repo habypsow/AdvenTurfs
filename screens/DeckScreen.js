@@ -2,13 +2,22 @@ import React, { Component } from 'react';
 import { View, Text} from 'react-native';
 import { connect } from 'react-redux';
 import { MapView } from 'expo';
-import { Card, Button } from 'react-native-elements';
+import { Card, Button, Icon } from 'react-native-elements';
 import Swipe from '../components/Swipe';
 import * as actions from '../actions';
 
 
 
+
 class DeckScreen extends Component {
+  static navigationOptions = {
+    title: 'Parks',
+    // tabBarIcon =
+    //   ({ tintColor }) => ({
+    //     return <Icon name="description" size={30} color={tintColor} />
+    //   })
+  }
+
   renderCard(park) {
 
     const initialRegion = {
