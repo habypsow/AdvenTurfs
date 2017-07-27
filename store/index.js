@@ -12,6 +12,6 @@ const store = createStore(
   )
 );
 
-persistStore(store, { storage: AsyncStorage, whitelist: ['likedParks'] });
+persistStore(store, { storage: AsyncStorage, whitelist: ['likedPlaces'] });
 
 export default store;

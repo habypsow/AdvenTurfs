@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { View } from 'react-native';
 import { Button, Icon } from 'react-native-elements';
 import { connect } from 'react-redux';
-import { clearLikedParks } from '../actions';
+import { clearLikedPlaces } from '../actions';
 
 
 class SettingsScreen extends Component {
@@ -22,7 +22,7 @@ class SettingsScreen extends Component {
         large
         icon={{ name: 'delete-forever' }}
         backgroundColor="#f44336"
-        onPress={this.props.clearLikedParks}
+        onPress={this.props.clearLikedPlaces}
 
         />
       </View>
@@ -30,4 +30,4 @@ class SettingsScreen extends Component {
   }
 }
 
-export default connect(null, { clearLikedParks })(SettingsScreen);
+export default connect(null, { clearLikedPlaces })(SettingsScreen);

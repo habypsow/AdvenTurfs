@@ -1,17 +1,17 @@
 import _ from 'lodash';
 import { REHYDRATE } from 'redux-persist/constants';
 import {
-  LIKE_PARK,
-  CLEAR_LIKED_PARKS
+  LIKE_PLACE,
+  CLEAR_LIKED_PLACES
 } from '../actions/types';
 
 export default function(state = [], action) {
   switch (action.type) {
     case REHYDRATE:
-    return action.payload.likedParks || [];
-    case CLEAR_LIKED_PARKS:
+    return action.payload.likedPlaces || [];
+    case CLEAR_LIKED_PLACES:
     return [];
-    case LIKE_PARK:
+    case LIKE_PLACE:
       return _.uniqBy([
         action.payload, ...state
       ], 'id');

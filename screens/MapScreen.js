@@ -36,7 +36,7 @@ onRegionChangeComplete = (region) => {
 }
 
 onButtonPress = () => {
-  this.props.fetchParks(this.state.region, () => {
+  this.props.fetchPlaces(this.state.region, () => {
       this.props.navigation.navigate('deck');
   });
 };

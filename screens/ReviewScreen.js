@@ -20,19 +20,19 @@ class ReviewScreen extends Component {
     color="rgba(0,122,255,1)"/>
   });
 
-renderLikedParks() {
-  return this.props.likedParks.map(park => {
+renderLikedPlaces() {
+  return this.props.likedPlaces.map(place => {
     const initialRegion = {
-      longitude: park.longitude,
-      latitude: park.latitude,
+      longitude: place.longitude,
+      latitude: place.latitude,
       latitudeDelta: 0.0002,
       longitudeDelta: 0.0025
     };
 
     return (
-      <Card title={park.brewery.name}
+      <Card title={place.brewery.name}
 
-       key={park.id}>
+       key={place.id}>
         <View style={{ height: 250 }}>
           <MapView
             style={{ flex: 1 }}
@@ -47,7 +47,7 @@ renderLikedParks() {
               iconRight
               raised
               icon={{ name: 'touch-app'}}
-              onPress={() => Linking.openURL(park.website)}
+              onPress={() => Linking.openURL(place.website)}
             />
             <Button title="Contact"
               iconRight
@@ -55,7 +55,7 @@ renderLikedParks() {
               raised
               icon={{ name: 'phone'}}
               onPress={() => {
-                phonecall(park.phone, true)
+                phonecall(place.phone, true)
               }}
             />
           </View>
@@ -69,7 +69,7 @@ renderLikedParks() {
   render() {
     return (
       <ScrollView>
-        {this.renderLikedParks()}
+        {this.renderLikedPlaces()}
       </ScrollView>
     );
   }
@@ -88,7 +88,7 @@ const styles = {
 }
 
 function mapStateToProps(state) {
-  return { likedParks: state.likedParks };
+  return { likedPlaces: state.likedPlaces };
 }
 
 export default connect(mapStateToProps)(ReviewScreen);

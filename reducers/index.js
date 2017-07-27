@@ -1,9 +1,9 @@
 import { combineReducers } from 'redux';
 import auth from './auth_reducer';
-import parks from './parks_reducer';
-import likedParks from './likes_reducer';
-import clearLikedParks from './likes_reducer';
+import places from './places_reducer';
+import likedPLaces from './likes_reducer';
+import clearLikedPlaces from './likes_reducer';
 
 export default combineReducers({
-  auth, parks, likedParks, clearLikedParks
+  auth, places, likedPlaces, clearLikedPlaces
 });

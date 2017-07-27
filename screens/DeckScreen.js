@@ -18,17 +18,17 @@ class DeckScreen extends Component {
       }
   }
 
-  renderCard(park) {
+  renderCard(place) {
 
     const initialRegion = {
-      longitude: park.longitude,
-      latitude: park.latitude,
+      longitude: place.longitude,
+      latitude: place.latitude,
       latitudeDelta: 0.0002,
       longitudeDelta: 0.0015
     }
-  console.log(park);
+  console.log(place);
     return (
-      <Card title={park.brewery.name}
+      <Card title={place.brewery.name}
       >
         <View style={{ height: 300 }}>
           <MapView
@@ -44,7 +44,7 @@ class DeckScreen extends Component {
         </View>
         <View style={styles.detailWrapper}>
           <Text style={styles.textStyle}>
-          {park.streetAddress}
+          {place.streetAddress}
           </Text>
         </View>
         <View style={styles.detailWrapper}>
@@ -52,12 +52,12 @@ class DeckScreen extends Component {
         </View>
         <View style={styles.detailWrapper}>
           <Text style={styles.textStyle}>
-          {park.locationTypeDisplay}
+          {place.locationTypeDisplay}
           </Text>
         </View>
         <View style={styles.detailWrapper}>
           <Text style={styles.textStyle}>
-            Beer Style: {(park.brewery.brandClassification).toUpperCase()}
+            Beer Style: {(place.brewery.brandClassification).toUpperCase()}
           </Text>
         </View>
         <View style={styles.detailsWrapper}>
@@ -85,10 +85,10 @@ class DeckScreen extends Component {
     return (
       <View style={{ marginTop: 20 }}>
       <Swipe
-      data={this.props.parks}
+      data={this.props.placess}
       renderCard={this.renderCard}
       renderNoMoreCards={this.renderNoMoreCards.bind(this)}
-      onSwipeRight={park => this.props.likePark(park)}
+      onSwipeRight={place => this.props.likePlace(place)}
       keyProp="id"
       />
       </View>
@@ -109,12 +109,12 @@ const styles = {
   }
 }
 
-function mapStateToProps({ parks }) {
-console.log(parks)
-  if (parks.data.length === 0) {
-    return { parks: [] };
-  } else if (parks.data.description !== 'null') {
-    return { parks: parks.data }
+function mapStateToProps({ places }) {
+console.log(places)
+  if (places.data.length === 0) {
+    return { places: [] };
+  } else if (places.data.description !== 'null') {
+    return { places: places.data }
   }
 }
 
