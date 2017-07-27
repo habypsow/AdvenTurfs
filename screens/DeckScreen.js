@@ -87,10 +87,10 @@ const styles = {
 }
 
 function mapStateToProps({ parks }) {
-
+console.log(parks)
   if (parks.data.length === 0) {
     return { parks: [] };
-  } else {
+  } else if (parks.data.description !== 'null') {
     return { parks: parks.data }
   }
 }

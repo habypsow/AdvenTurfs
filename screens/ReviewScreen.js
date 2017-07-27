@@ -27,7 +27,7 @@ renderLikedParks() {
       latitudeDelta: 0.045,
       longitudeDelta: 0.02
     };
-
+console.log("I am in Review " + park)
     return (
       <Card title={park.brewery.name} key={park.id}>
         <View style={{ height: 200 }}>
@@ -39,11 +39,11 @@ renderLikedParks() {
           />
           <View style={styles.detailWrapper}>
             <Text style={styles.italics}>{park.brewery.name}</Text>
-            <Text style={styles.italics}>{park.brewery.description}</Text>
+            <Text style={styles.italics}>Ha</Text>
           </View>
-          <Button title="Get Directions"
+          <Button title="Location Website"
           backgroundColor="#03A9F4"
-          onPress={() => Linking.openURL('https://maps.google.com/')}
+          onPress={() => Linking.openURL(park.website)}
           />
         </View>
       </Card>
