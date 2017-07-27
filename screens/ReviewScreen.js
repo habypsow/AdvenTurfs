@@ -76,9 +76,6 @@ console.log("I am in Review " + park)
 }
 
 const styles = {
-  italics: {
-    fontStyle: 'italic'
-  },
   detailWrapper: {
     alignItems: 'stretch',
     marginBottom: 10,

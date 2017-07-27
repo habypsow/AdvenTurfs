@@ -23,8 +23,8 @@ class DeckScreen extends Component {
     const initialRegion = {
       longitude: park.longitude,
       latitude: park.latitude,
-      latitudeDelta: 0.045,
-      longitudeDelta: 0.02
+      latitudeDelta: 0.01,
+      longitudeDelta: 0.01
     }
   console.log(park);
     return (
@@ -97,7 +97,8 @@ class DeckScreen extends Component {
 const styles = {
   textStyle: {
     fontFamily: 'Cochin',
-    textAlign: 'center'
+    textAlign: 'center',
+    marginTop: 5
   },
   detailWrapper: {
     flexDirection: 'row',
