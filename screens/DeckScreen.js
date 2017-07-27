@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text} from 'react-native';
+import { View, Text } from 'react-native';
 import { connect } from 'react-redux';
 import { MapView } from 'expo';
 import { Card, Button, Icon } from 'react-native-elements';
@@ -40,10 +40,21 @@ class DeckScreen extends Component {
           </MapView>
         </View>
         <View style={styles.detailWrapper}>
-          <Text>Location: {park.streetAddress}</Text>
-        </View>
+          <Text> {park.streetAddress}</Text>
+          </View>
+          <View>
+          <Text>{park.phone}</Text>
+          </View>
         <View style={styles.detailWrapper}>
-        <Text>{park.brewery.description}</Text>
+        <Text>{park.locationTypeDisplay}</Text>
+        </View>
+        <View>
+          <Text>
+            Organic {park.brewery.brandClassification} Beer
+          </Text>
+        </View>
+        <View>
+          <Text>Open Since {park.brewery.established}</Text>
         </View>
 
       </Card>

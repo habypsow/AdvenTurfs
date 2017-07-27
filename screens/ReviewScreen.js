@@ -41,8 +41,10 @@ console.log("I am in Review " + park)
             <Text style={styles.italics}>{park.brewery.name}</Text>
             <Text style={styles.italics}>Ha</Text>
           </View>
-          <Button title="Location Website"
+          <Button title="Visit Website"
           backgroundColor="#03A9F4"
+          iconRight
+          icon={{ name: 'touch-app'}}
           onPress={() => Linking.openURL(park.website)}
           />
         </View>
