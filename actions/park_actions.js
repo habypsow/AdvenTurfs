@@ -25,14 +25,14 @@ import {
 
 export const fetchParks = (region, callback) => {
 
-return ( dispatch ) => { axios.get(`https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=47.6097,-122.3331&radius=1000&type=park&key=AIzaSyDl3wgOiDflGbUlR6aTuWkb0-VdaJC3PLY`)
+return ( dispatch ) => { axios.get(`http://api.brewerydb.com/v2/locations/?key=e14450a73af348f11170c33ec926ca08&postalCode=98101`)
 .then((response) => {
     dispatch({
       type: FETCH_PARKS,
       payload: response.data
     });
     callback();
-      console.log(response.data);
+      console.log(response.data.data);
       console.log(response.status);
     });
   };

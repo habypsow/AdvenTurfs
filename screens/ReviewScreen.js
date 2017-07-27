@@ -22,8 +22,8 @@ class ReviewScreen extends Component {
 renderLikedParks() {
   return this.props.likedParks.map(park => {
     const initialRegion = {
-      longitude: park.geometry.location.lng,
-      latitude: park.geometry.location.lat,
+      longitude: park.longitude,
+      latitude: park.latitude,
       latitudeDelta: 0.045,
       longitudeDelta: 0.02
     };
@@ -39,7 +39,7 @@ renderLikedParks() {
           />
           <View style={styles.detailWrapper}>
             <Text style={styles.italics}>{park.name}</Text>
-            <Text style={styles.italics}>{park.rating}</Text>
+            <Text style={styles.italics}>park.rating</Text>
           </View>
           <Button title="Get Directions"
           backgroundColor="#03A9F4"

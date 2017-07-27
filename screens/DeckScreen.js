@@ -21,8 +21,8 @@ class DeckScreen extends Component {
   renderCard(park) {
 
     const initialRegion = {
-      longitude: park.geometry.location.lng,
-      latitude: park.geometry.location.lat,
+      longitude: park.longitude,
+      latitude: park.latitude,
       latitudeDelta: 0.045,
       longitudeDelta: 0.02
     }
@@ -40,10 +40,10 @@ class DeckScreen extends Component {
           </MapView>
         </View>
         <View style={styles.detailWrapper}>
-          <Text>Location: {park.vicinity}</Text>
+          <Text>Location: {park.streetAddress}</Text>
         </View>
         <View style={styles.detailWrapper}>
-        <Text>Rating: {park.rating}</Text>
+        <Text>Rating:</Text>
         </View>
 
       </Card>
@@ -87,10 +87,10 @@ const styles = {
 }
 
 function mapStateToProps({ parks }) {
-  if (parks.results.length === 0) {
+  if (parks.data.length === 0) {
     return { parks: [] };
   } else {
-    return { parks: [parks.results[0]] }
+    return { parks: parks.data }
   }
 }
 
