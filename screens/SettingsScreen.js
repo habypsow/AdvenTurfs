@@ -1,11 +1,19 @@
 import React, { Component } from 'react';
 import { View, Text } from 'react-native';
-import { Button } from 'react-native-elements';
+import { Button, Icon } from 'react-native-elements';
 import { connect } from 'react-redux';
 import { clearLikedParks } from '../actions';
 
 
 class SettingsScreen extends Component {
+  static navigationOptions = ({ navigation }) => ({
+    title: "Reviews",
+    tabBarIcon:
+      ({ tintColor }) => {
+        return <Icon name="favorite" size={30} color={tintColor} />
+      }
+    });
+
   render() {
     return (
       <View>

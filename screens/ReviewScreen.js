@@ -29,7 +29,7 @@ renderLikedParks() {
     };
 
     return (
-      <Card title={park.name} key={park.id}>
+      <Card title={park.brewery.name} key={park.id}>
         <View style={{ height: 200 }}>
           <MapView
             style={{ flex: 1 }}
@@ -38,8 +38,8 @@ renderLikedParks() {
             initialRegion={initialRegion}
           />
           <View style={styles.detailWrapper}>
-            <Text style={styles.italics}>{park.name}</Text>
-            <Text style={styles.italics}>park.rating</Text>
+            <Text style={styles.italics}>{park.brewery.name}</Text>
+            <Text style={styles.italics}>{park.brewery.description}</Text>
           </View>
           <Button title="Get Directions"
           backgroundColor="#03A9F4"

@@ -26,9 +26,9 @@ class DeckScreen extends Component {
       latitudeDelta: 0.045,
       longitudeDelta: 0.02
     }
-  console.log("Heeeyyy" + this.props);
+  console.log(park);
     return (
-      <Card title={park.name}>
+      <Card title={park.brewery.name}>
         <View style={{ height: 300 }}>
           <MapView
             scrollEnabled={false}
@@ -43,7 +43,7 @@ class DeckScreen extends Component {
           <Text>Location: {park.streetAddress}</Text>
         </View>
         <View style={styles.detailWrapper}>
-        <Text>Rating:</Text>
+        <Text>{park.brewery.description}</Text>
         </View>
 
       </Card>
@@ -87,6 +87,7 @@ const styles = {
 }
 
 function mapStateToProps({ parks }) {
+
   if (parks.data.length === 0) {
     return { parks: [] };
   } else {

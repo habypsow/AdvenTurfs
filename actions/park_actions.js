@@ -25,7 +25,7 @@ import {
 
 export const fetchParks = (region, callback) => {
 
-return ( dispatch ) => { axios.get(`http://api.brewerydb.com/v2/locations/?key=e14450a73af348f11170c33ec926ca08&postalCode=98101`)
+return ( dispatch ) => { axios.get(`http://api.brewerydb.com/v2/locations/?key=e14450a73af348f11170c33ec926ca08&postalCode=98103`)
 .then((response) => {
     dispatch({
       type: FETCH_PARKS,
