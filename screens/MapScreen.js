@@ -21,8 +21,8 @@ class MapScreen extends Component {
     region: {
       longitude: -122.3331,
       latitude: 47.6097,
-      longitudeDelta: 0.04,
-      latitudeDelta: 0.09
+      longitudeDelta: 0.03,
+      latitudeDelta: 0.06
     }
   }
 
@@ -58,7 +58,7 @@ onButtonPress = () => {
       <View style={styles.buttonContainer}>
         <Button
           large
-          title="Search This Area"
+          title="Search Here"
           backgroundColor="#009688"
           icon={{ name: 'search' }}
           onPress={this.onButtonPress}

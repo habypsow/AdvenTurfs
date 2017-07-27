@@ -17,7 +17,7 @@ class ReviewScreen extends Component {
     <Button title="Settings"
     onPress={() => navigation.navigate('settings')}
     backgroundColor="rgba(0,0,0,0)"
-    color="rgba(0,122,255,1)"/>
+    color="#03A9F4"/>
   });
 
 renderLikedParks() {
@@ -25,18 +25,18 @@ renderLikedParks() {
     const initialRegion = {
       longitude: park.longitude,
       latitude: park.latitude,
-      latitudeDelta: 0.045,
-      longitudeDelta: 0.02
+      latitudeDelta: 0.0002,
+      longitudeDelta: 0.0025
     };
-console.log("I am in Review " + park)
+
     return (
       <Card title={park.brewery.name}
 
        key={park.id}>
-        <View style={{ height: 200 }}>
+        <View style={{ height: 250 }}>
           <MapView
             style={{ flex: 1 }}
-            cacheEnabled={true}
+            cacheEnabled={false}
             scrollEnabled={false}
             initialRegion={initialRegion}
           />
@@ -77,7 +77,7 @@ console.log("I am in Review " + park)
 
 const styles = {
   detailWrapper: {
-    alignItems: 'stretch',
+    alignItems: 'center',
     marginBottom: 10,
     flexDirection: 'row',
     justifyContent: 'space-around',
