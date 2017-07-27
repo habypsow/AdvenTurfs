@@ -17,7 +17,7 @@ class ReviewScreen extends Component {
     <Button title="Settings"
     onPress={() => navigation.navigate('settings')}
     backgroundColor="rgba(0,0,0,0)"
-    color="#03A9F4"/>
+    color="rgba(0,122,255,1)"/>
   });
 
 renderLikedParks() {
