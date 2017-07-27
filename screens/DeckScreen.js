@@ -23,8 +23,8 @@ class DeckScreen extends Component {
     const initialRegion = {
       longitude: park.longitude,
       latitude: park.latitude,
-      latitudeDelta: 0.01,
-      longitudeDelta: 0.01
+      latitudeDelta: 0.0002,
+      longitudeDelta: 0.0015
     }
   console.log(park);
     return (
@@ -32,9 +32,11 @@ class DeckScreen extends Component {
       >
         <View style={{ height: 300 }}>
           <MapView
+            showsBuildings={true}
+            showsPointsOfInterest={true}
             scrollEnabled={false}
             style={{ flex: 1 }}
-            cacheEnabled={true}
+            cacheEnabled={false}
             initialRegion={initialRegion}
             >
 
@@ -46,7 +48,7 @@ class DeckScreen extends Component {
           </Text>
         </View>
         <View style={styles.detailWrapper}>
-          <Text style={styles.textStyle}>{park.phone}</Text>
+          <Text style={styles.textStyle}>Events: Happy Hours</Text>
         </View>
         <View style={styles.detailWrapper}>
           <Text style={styles.textStyle}>
@@ -59,7 +61,7 @@ class DeckScreen extends Component {
           </Text>
         </View>
         <View style={styles.detailsWrapper}>
-          <Text style={styles.textStyle}>Open Since {park.brewery.established}</Text>
+          <Text style={styles.textStyle}>Organic Brews Available</Text>
         </View>
 
       </Card>
