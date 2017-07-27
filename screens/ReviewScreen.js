@@ -3,6 +3,7 @@ import { View, Text, ScrollView, Linking } from 'react-native';
 import { Button, Card, Icon } from 'react-native-elements';
 import { connect } from 'react-redux';
 import { MapView } from 'expo';
+import { phonecall } from 'react-native-communications';
 
 
 class ReviewScreen extends Component {
@@ -29,7 +30,9 @@ renderLikedParks() {
     };
 console.log("I am in Review " + park)
     return (
-      <Card title={park.brewery.name} key={park.id}>
+      <Card title={park.brewery.name}
+
+       key={park.id}>
         <View style={{ height: 200 }}>
           <MapView
             style={{ flex: 1 }}
@@ -37,16 +40,25 @@ console.log("I am in Review " + park)
             scrollEnabled={false}
             initialRegion={initialRegion}
           />
+
           <View style={styles.detailWrapper}>
-            <Text style={styles.italics}>{park.brewery.name}</Text>
-            <Text style={styles.italics}>Ha</Text>
+            <Button title="Website"
+              backgroundColor="#03A9F4"
+              iconRight
+              raised
+              icon={{ name: 'touch-app'}}
+              onPress={() => Linking.openURL(park.website)}
+            />
+            <Button title="Contact"
+              iconRight
+              backgroundColor="#03A9F4"
+              raised
+              icon={{ name: 'phone'}}
+              onPress={() => {
+                phonecall(park.phone, true)
+              }}
+            />
           </View>
-          <Button title="Visit Website"
-          backgroundColor="#03A9F4"
-          iconRight
-          icon={{ name: 'touch-app'}}
-          onPress={() => Linking.openURL(park.website)}
-          />
         </View>
       </Card>
     );
@@ -68,10 +80,13 @@ const styles = {
     fontStyle: 'italic'
   },
   detailWrapper: {
+    alignItems: 'stretch',
     marginBottom: 10,
     flexDirection: 'row',
     justifyContent: 'space-around',
-    marginTop: 10
+    marginTop: 18,
+
+
   }
 }
 

@@ -23,6 +23,7 @@ class SettingsScreen extends Component {
         icon={{ name: 'delete-forever' }}
         backgroundColor="#f44336"
         onPress={this.props.clearLikedParks}
+
         />
       </View>
     );
