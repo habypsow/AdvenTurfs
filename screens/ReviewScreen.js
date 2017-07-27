@@ -8,7 +8,7 @@ import { phonecall } from 'react-native-communications';
 
 class ReviewScreen extends Component {
   static navigationOptions = ({ navigation }) => ({
-    title: "Reviews",
+    title: "Favorites",
     tabBarIcon:
       ({ tintColor }) => {
         return <Icon name="favorite" size={30} color={tintColor} />

@@ -11,10 +11,10 @@ import * as actions from '../actions';
 
 class DeckScreen extends Component {
   static navigationOptions = {
-    title: 'Parks',
+    title: 'Breweries',
     tabBarIcon:
       ({ tintColor }) => {
-        return <Icon name="description" size={30} color={tintColor} />
+        return <Icon name="local-drink" size={30} color={tintColor} />
       }
   }
 
@@ -28,7 +28,8 @@ class DeckScreen extends Component {
     }
   console.log(park);
     return (
-      <Card title={park.brewery.name}>
+      <Card title={park.brewery.name}
+      >
         <View style={{ height: 300 }}>
           <MapView
             scrollEnabled={false}
@@ -40,21 +41,25 @@ class DeckScreen extends Component {
           </MapView>
         </View>
         <View style={styles.detailWrapper}>
-          <Text> {park.streetAddress}</Text>
-          </View>
-          <View>
-          <Text>{park.phone}</Text>
-          </View>
-        <View style={styles.detailWrapper}>
-        <Text>{park.locationTypeDisplay}</Text>
-        </View>
-        <View>
-          <Text>
-            Organic {park.brewery.brandClassification} Beer
+          <Text style={styles.textStyle}>
+          {park.streetAddress}
           </Text>
         </View>
-        <View>
-          <Text>Open Since {park.brewery.established}</Text>
+        <View style={styles.detailWrapper}>
+          <Text style={styles.textStyle}>{park.phone}</Text>
+        </View>
+        <View style={styles.detailWrapper}>
+          <Text style={styles.textStyle}>
+          {park.locationTypeDisplay}
+          </Text>
+        </View>
+        <View style={styles.detailWrapper}>
+          <Text style={styles.textStyle}>
+            Beer Style: {(park.brewery.brandClassification).toUpperCase()}
+          </Text>
+        </View>
+        <View style={styles.detailsWrapper}>
+          <Text style={styles.textStyle}>Open Since {park.brewery.established}</Text>
         </View>
 
       </Card>
@@ -62,7 +67,7 @@ class DeckScreen extends Component {
   }
   renderNoMoreCards() {
     return (
-      <Card title="No More Parks">
+      <Card title="No More Brews">
         <Button
         title="Back to Map"
         large
@@ -76,7 +81,7 @@ class DeckScreen extends Component {
 
   render() {
     return (
-      <View style={{ marginTop: 10 }}>
+      <View style={{ marginTop: 20 }}>
       <Swipe
       data={this.props.parks}
       renderCard={this.renderCard}
@@ -90,10 +95,14 @@ class DeckScreen extends Component {
 }
 
 const styles = {
+  textStyle: {
+    fontFamily: 'Cochin',
+    textAlign: 'center'
+  },
   detailWrapper: {
     flexDirection: 'row',
     justifyContent: 'space-around',
-    marginBottom: 10
+    marginBottom: 10,
   }
 }
 
