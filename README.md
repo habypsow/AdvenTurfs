@@ -8,7 +8,7 @@ An application that gives the user the ability to select a location to search fo
   - Start the project with $react-native run-ios
 
 * Application Features
--  This Application makes use of the ("BreweryDB" http://www.brewerydb.com/) API to source brewery locations based on postalcode or locality.
+-  This Application makes use of the "BreweryDB" http://www.brewerydb.com/ API to source brewery locations based on postalcode or locality.
 - The user has the ability to select a location on the map to source brewery locations
 - The user has the ability to view specific brewery details such as types offered, hours, contact information
 - The user has the ability to call or visit the specified location
